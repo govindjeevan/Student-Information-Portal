@@ -19,7 +19,7 @@
         <activity android:name=".TimeTable" />
         <activity android:name=".Forum" />
         <activity android:name=".News" />
-        <activity android:name=".Polls"></activity>
+        <activity android:name=".Polls" />
     </application>
 
 </manifest>
