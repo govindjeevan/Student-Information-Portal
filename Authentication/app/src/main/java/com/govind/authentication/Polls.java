@@ -20,7 +20,6 @@ public class Polls extends AppCompatActivity {
     private int i=0;
 // ...
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +34,7 @@ public class Polls extends AppCompatActivity {
 
         mDatabase.addValueEventListener(questionListener);
 
-        getValue();
+
 
     }
 
