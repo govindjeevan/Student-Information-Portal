@@ -3,6 +3,9 @@ package com.govind.authentication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,11 +17,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Polls extends AppCompatActivity {
 
-    public static final String TAG = Polls.class.getSimpleName();
-    private FirebaseAuth auth;
-    private DatabaseReference mDatabase;
-    private int i=0;
-// ...
+    TextView mConditionTextview;
+    Button mButtonSunny;
+    Button mButtonFoggy;
+
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mConditionReference = mRootRef.child("condition");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,41 +30,43 @@ public class Polls extends AppCompatActivity {
         setContentView(R.layout.activity_polls);
 
 
-        auth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        newQuestion(String.valueOf(i++),"Want Class tommorrow?","Yes","No");
-
-        mDatabase.addValueEventListener(questionListener);
-
-
+        mConditionTextview=findViewById(R.id.textViewCondition);
+        mButtonSunny=findViewById(R.id.buttonSunny);
+        mButtonFoggy=findViewById(R.id.buttonFoggy);
 
     }
 
-    private void newQuestion(String questionID, String question, String opt1, String opt2) {
-        Question q = new Question(question, opt1, opt2);
 
-        mDatabase.child("Questions").child(questionID).setValue(q);
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        mConditionReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String text  = dataSnapshot.getValue(String.class);
+                mConditionTextview.setText(text);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        mButtonSunny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mConditionReference.setValue("Sunny");
+            }
+        });
+
+        mButtonFoggy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mConditionReference.setValue("Foggy");
+            }
+        });
     }
-
-    ValueEventListener questionListener = new ValueEventListener() {
-
-
-        @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            // Get Post object and use the values to update the UI
-            Question q = dataSnapshot.getValue(Question.class);
-            // ...
-        }
-
-        @Override
-        public void onCancelled(DatabaseError databaseError) {
-            // Getting Post failed, log a message
-            Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-            // ...
-        }
-    };
-
-
 }

@@ -4,5 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.govind.authentication.News">
+    tools:context="com.govind.authentication.News"
+    android:layout_margin="@dimen/fab_margin">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:hint="Title"
+            android:inputType="text|textShortMessage" />
+
+        <EditText
+            android:id="@+id/editTextContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:ems="10"
+            android:fontFamily="monospace"
+            android:hint="Content"
+            android:inputType="text|textLongMessage" />
+
+        <Button
+            android:id="@+id/buttonPost"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:fontFamily="monospace"
+            android:text="Post"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>

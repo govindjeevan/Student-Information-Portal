@@ -1,57 +1,60 @@
 package com.govind.authentication;
 
-
-
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.provider.SyncStateContract;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.List;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class News extends AppCompatActivity {
 
-    private DatabaseReference mDatabase;
-    private DatabaseReference journalCloudEndPoint;
-    private DatabaseReference tagCloudEndPoint;
-    private SharedPreferences sharedPreferences;
-
-
+    EditText mNewsText;
+    Button mPost;
+    EditText mNewsContent;
+    DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference mNews = mRootRef.child("news");
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        mDatabase =  FirebaseDatabase.getInstance().getReference();
-        journalCloudEndPoint = mDatabase.child("journalentris");
-        tagCloudEndPoint = mDatabase.child("tags");
+        mNewsText=findViewById(R.id.editTextNews);
+        mPost=findViewById(R.id.buttonPost);
+        mNewsContent=findViewById(R.id.editTextContent);
 
-
-        addInitialDataToFirebase();
-
-    }
-
-
-
-    private void addInitialDataToFirebase() {
-
-        List<JournalEntry> sampleJournalEntries = SampleData.getSampleJournalEntries();
-        for (JournalEntry journalEntry: sampleJournalEntries){
-            String key = journalCloudEndPoint.push().getKey();
-            journalEntry.setJournalId(key);
-            journalCloudEndPoint.child(key).setValue(journalEntry);
-        }
 
 
 
     }
-}
 
+    @Override
+    protected void onStart(){
+        super.onStart();
 
+        mPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NewsPost newspost= new NewsPost();
+                newspost.setTitle(mNewsText.getText().toString());
+                newspost.setContent(mNewsContent.getText().toString());
+                String key = mNews.push().getKey();
+                newspost.setnewsID(key);
+                mNews.child(key).setValue(newspost);
+                startActivity(new Intent(News.this, NewsView.class));
+            }
+        });
+
+    }
+
+    }

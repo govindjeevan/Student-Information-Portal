@@ -5,5 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.govind.authentication.Polls">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textViewCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="217dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        tools:text="Condition" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/buttonFoggy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foggy"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <Button
+            android:id="@+id/buttonSunny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
