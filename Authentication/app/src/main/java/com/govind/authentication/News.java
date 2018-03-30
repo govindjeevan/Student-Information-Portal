@@ -14,13 +14,19 @@ import com.google.firebase.database.ValueEventListener;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class News extends AppCompatActivity {
 
     EditText mNewsText;
     Button mPost;
+    ArrayList<String> listitems=new ArrayList<>();
     EditText mNewsContent;
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mNews = mRootRef.child("news");
@@ -32,9 +38,6 @@ public class News extends AppCompatActivity {
         mNewsText=findViewById(R.id.editTextNews);
         mPost=findViewById(R.id.buttonPost);
         mNewsContent=findViewById(R.id.editTextContent);
-
-
-
 
     }
 

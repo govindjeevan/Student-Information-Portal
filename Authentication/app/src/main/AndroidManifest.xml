@@ -22,7 +22,6 @@
         <activity android:name=".News" />
         <activity android:name=".Forum" />
         <activity android:name=".TimeTable" />
-        <activity android:name=".NewsView"></activity>
     </application>
 
 </manifest>
