@@ -19,9 +19,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".Polls" />
-        <activity android:name=".News" />
         <activity android:name=".Forum" />
         <activity android:name=".TimeTable" />
+        <activity android:name=".News" />
+        <activity android:name=".NewsView" />
+        <activity
+            android:name=".RecyclerView"
+            android:label="@string/title_activity_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ViewNews"></activity>
     </application>
 
 </manifest>

@@ -6,18 +6,15 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import static java.lang.Boolean.TRUE;
 
-public class Polls extends AppCompatActivity {
-
+public class ViewNews extends AppCompatActivity {
 
     private WebView webview;
     private static final String TAG = "Main";
@@ -34,14 +31,14 @@ public class Polls extends AppCompatActivity {
         this.webview = (WebView) findViewById(R.id.webview);
 
         WebSettings settings = webview.getSettings();
+        webview.clearCache(TRUE);
         settings.setJavaScriptEnabled(true);
         webview.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
-        progressBar = ProgressDialog.show(Polls.this, "Poll Pool", "Loading...");
+        progressBar = ProgressDialog.show(ViewNews.this, "News List", "Loading...");
 
-        webview.clearCache(TRUE);
         webview.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 Log.i(TAG, "Processing webview url click...");
@@ -58,7 +55,7 @@ public class Polls extends AppCompatActivity {
 
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 Log.e(TAG, "Error: " + description);
-                Toast.makeText(Polls.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewNews.this, "Oh no! " + description, Toast.LENGTH_SHORT).show();
                 alertDialog.setTitle("Error");
                 alertDialog.setMessage(description);
                 alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
@@ -69,6 +66,6 @@ public class Polls extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-        webview.loadUrl("https://authentication-140be.firebaseapp.com/poll.html");
+        webview.loadUrl("https://authentication-140be.firebaseapp.com/news.html");
     }
 }
