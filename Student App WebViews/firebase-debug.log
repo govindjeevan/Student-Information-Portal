@@ -1,0 +1,32 @@
+[debug] [2018-04-04T20:42:14.651Z] ----------------------------------------------------------------------
+[debug] [2018-04-04T20:42:14.653Z] Command:       /home/govind/.nvm/versions/node/v7.6.0/bin/node /home/govind/.nvm/versions/node/v7.6.0/bin/firebase serve
+[debug] [2018-04-04T20:42:14.653Z] CLI Version:   3.17.7
+[debug] [2018-04-04T20:42:14.653Z] Platform:      linux
+[debug] [2018-04-04T20:42:14.653Z] Node Version:  v7.6.0
+[debug] [2018-04-04T20:42:14.653Z] Time:          Thu Apr 05 2018 02:12:14 GMT+0530 (IST)
+[debug] [2018-04-04T20:42:14.653Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-04T20:42:14.661Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-04T20:42:14.661Z] > authorizing via signed-in user
+[debug] [2018-04-04T20:42:14.663Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/authentication-140be  
+  
+ Thu Apr 05 2018 02:12:14 GMT+0530 (IST)
+[debug] [2018-04-04T20:42:16.233Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T20:42:16.236Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/authentication-140be/tokens  
+  
+ Thu Apr 05 2018 02:12:16 GMT+0530 (IST)
+[debug] [2018-04-04T20:42:27.491Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-04T20:42:27.493Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/authentication-140be  
+  
+ Thu Apr 05 2018 02:12:27 GMT+0530 (IST)
+[debug] [2018-04-04T20:42:29.146Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/govind/Student App WebViews'...
+[info] 
+[debug] [2018-04-04T20:42:29.148Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/12102687012/clients/_:getWebAppConfig  
+  
+ Thu Apr 05 2018 02:12:29 GMT+0530 (IST)
+[debug] [2018-04-04T20:42:30.780Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

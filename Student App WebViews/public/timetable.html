@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Metro 4 -->
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/4.12.0/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/4.12.0/firebase-auth.js"></script>
+        <script defer src="/__/firebase/4.12.0/firebase-database.js"></script>
+        <script defer src="/__/firebase/4.12.0/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/4.12.0/firebase-storage.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+    
+  </head>
+  <body>
+<input data-role="datepicker" data-distance="2" type="text" id="date"> 
+
+    <ul data-role="tabs">
+    <li><a href="#_target_1">Update</a></li>
+    <li><a href="#_target_2">View</a></li>
+</ul>
+
+
+
+<div class="border bd-default no-border-top p-2">
+    <div id="_target_1">
+            <br>
+                <select data-role="select" id="1">
+                    <option class="fg-cyan">OS</option>
+                    <option class="fg-red">SE</option>
+                    <option class="fg-purple">DC</option>
+                    <option class="fg-emerald">DAA</option>
+                    <option class="fg-crimson">SP</option>
+                    <option class="fg-green">OOP</option>
+                    <option class="fg-orange">LAB</option>
+                    <option class="fg-grey">FREE</option>                                              
+                </select>
+  
+                <br>
+                    <select data-role="select" id="2">
+                        <option class="fg-cyan">OS</option>
+                        <option class="fg-red">SE</option>
+                        <option class="fg-purple">DC</option>
+                        <option class="fg-emerald">DAA</option>
+                        <option class="fg-crimson">SP</option>
+                        <option class="fg-green">OOP</option>
+                        <option class="fg-orange">LAB</option>
+                    <option class="fg-grey">FREE</option>                                              
+                        
+                    </select>
+                    <br>
+                        <select data-role="select" id="3">
+                            <option class="fg-cyan">OS</option>
+                            <option selected class="fg-red">SE</option>
+                            <option class="fg-purple">DC</option>
+                            <option class="fg-emerald">DAA</option>
+                            <option class="fg-crimson">SP</option>
+                            <option class="fg-green">OOP</option>
+                            <option class="fg-orange">LAB</option>
+                    <option class="fg-grey">FREE</option>                                              
+                                           
+                        </select>
+                        <br>
+                            <select data-role="select" id="4">
+                                <option class="fg-cyan">OS</option>
+                                <option class="fg-red">SE</option>
+                                <option selected class="fg-purple">DC</option>
+                                <option class="fg-emerald">DAA</option>
+                                <option class="fg-crimson">SP</option>
+                                <option class="fg-green">OOP</option>
+                                <option class="fg-orange">LAB</option>
+                    <option class="fg-grey">FREE</option>                                              
+                                               
+                            </select>
+                            <br>
+                                <select data-role="select" id="5">
+                                    <option class="fg-cyan">OS</option>
+                                    <option class="fg-red">SE</option>
+                                    <option class="fg-purple">DC</option>
+                                    <option selected class="fg-emerald">DAA</option>
+                                    <option class="fg-crimson">SP</option>
+                                    <option class="fg-green">OOP</option>
+                                    <option class="fg-orange">LAB</option>
+                    <option class="fg-grey">FREE</option>                                              
+                                                   
+                                </select>
+                                <br>
+                                    <select data-role="select" id="6">
+                                        <option class="fg-cyan">OS</option>
+                                        <option class="fg-red">SE</option>
+                                        <option class="fg-purple">DC</option>
+                                        <option class="fg-emerald">DAA</option>
+                                        <option class="fg-crimson">SP</option>
+                                        <option class="fg-green">OOP</option>
+                                        <option selected class="fg-orange">LAB</option>               
+                                    </select>
+                                    <br>
+                                        <select data-role="select" id="7">
+                                            <option class="fg-cyan">OS</option>
+                                            <option class="fg-red">SE</option>
+                                            <option class="fg-purple">DC</option>
+                                            <option class="fg-emerald">DAA</option>
+                                            <option class="fg-crimson">SP</option>
+                                            <option class="fg-green">OOP</option>
+                                            <option selected class="fg-orange">LAB</option>               
+                                        </select>
+                                        <br>
+                                            <select data-role="select" id="8">
+                                                <option class="fg-cyan">OS</option>
+                                                <option class="fg-red">SE</option>
+                                                <option class="fg-purple">DC</option>
+                                                <option class="fg-emerald">DAA</option>
+                                                <option class="fg-crimson">SP</option>
+                                                <option class="fg-green">OOP</option>
+                                                <option selected class="fg-orange">LAB</option>               
+                                            </select>
+                                            <br>
+                                                                                                                  
+  
+                
+              <button class="button warning drop-shadow" class="pos-center" onclick="setPeriod();">Update Schedule</button>
+            </div>
+  
+      </div>
+  
+    <div id="_target_2">
+        <div class="border bd-default no-border-top p-2">
+          <div id="scheduleList">
+
+
+            
+          </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAtK-LsjW0LLPc00mSBL31tJQjNCUsyYtE",
+        authDomain: "authentication-140be.firebaseapp.com",
+        databaseURL: "https://authentication-140be.firebaseio.com",
+        projectId: "authentication-140be",
+        storageBucket: "authentication-140be.appspot.com",
+        messagingSenderId: "12102687012"
+      };
+      firebase.initializeApp(config);
+    </script>
+        <!-- Compiled and minified JavaScript -->
+    <!-- jQuery first, then Metro UI JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="timescript.js"></script>
+    
+  </body>
+</html>
+
+
+
+
+

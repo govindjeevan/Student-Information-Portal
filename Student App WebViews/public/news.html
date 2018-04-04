@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="timestyle.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.12.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.12.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.12.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.12.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.12.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+  
+  </head>
+  <body>
+        <h1 align="center" style="color:#d32f2f ">NEWS FEED</h1>      
+
+      <div id="dynamic" class="row"></div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAtK-LsjW0LLPc00mSBL31tJQjNCUsyYtE",
+        authDomain: "authentication-140be.firebaseapp.com",
+        databaseURL: "https://authentication-140be.firebaseio.com",
+        projectId: "authentication-140be",
+        storageBucket: "authentication-140be.appspot.com",
+        messagingSenderId: "12102687012"
+      };
+      firebase.initializeApp(config);
+    </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+      <script src="newsscript.js"></script>
+    </body>
+</html>

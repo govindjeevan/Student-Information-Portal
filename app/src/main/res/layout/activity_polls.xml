@@ -1,69 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_time_table"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.govind.authentication.Polls">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.govind.homedashboard.TimeTable">
+    android:gravity="center_horizontal">
 
     <TextView
-        android:id="@+id/txt_user"
+        android:id="@+id/textViewCondition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_horizontal_margin"
-        android:textSize="20dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="217dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        tools:text="Condition" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
-                android:inputType="textCapWords"
-                android:maxLines="1" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="E-Mail"
-                android:inputType="textEmailAddress"
-                android:maxLines="1" />
-
-        </android.support.design.widget.TextInputLayout>
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
         <Button
-            android:id="@+id/btn_save"
-            style="?android:textAppearanceSmall"
-            android:layout_width="match_parent"
+            android:id="@+id/buttonFoggy"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorPrimary"
-            android:text="Save"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:text="Foggy"
+            tools:layout_editor_absoluteX="262dp"
+            tools:layout_editor_absoluteY="316dp" />
+
+        <Button
+            android:id="@+id/buttonSunny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="316dp" />
 
     </LinearLayout>
+
+
+
+
 </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

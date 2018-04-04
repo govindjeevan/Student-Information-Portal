@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.govind.homedashboard">
+    package="com.govind.authentication">
 
     <application
         android:allowBackup="true"
@@ -9,17 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".home">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Signup" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TimeTable" />
-        <activity android:name=".Forum" />
-        <activity android:name=".News" />
         <activity android:name=".Polls" />
+        <activity android:name=".Forum" />
+        <activity android:name=".TimeTable" />
+        <activity android:name=".News" />
+        <activity android:name=".NewsView" />
+        <activity
+            android:name=".RecyclerView"
+            android:label="@string/title_activity_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ViewNews"></activity>
     </application>
 
 </manifest>

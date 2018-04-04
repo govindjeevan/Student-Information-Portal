@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "1094780605811",
-    "firebase_url": "https://homedashboard3-9cf40.firebaseio.com",
-    "project_id": "homedashboard3-9cf40",
-    "storage_bucket": "homedashboard3-9cf40.appspot.com"
+    "project_number": "12102687012",
+    "firebase_url": "https://authentication-140be.firebaseio.com",
+    "project_id": "authentication-140be",
+    "storage_bucket": "authentication-140be.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1094780605811:android:bbbc2f1df7abfb11",
+        "mobilesdk_app_id": "1:12102687012:android:6503713322fae30f",
         "android_client_info": {
-          "package_name": "com.govind.homedashboard"
+          "package_name": "com.govind.authentication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1094780605811-n57g6fu5fqnnv1rbeb3h3sel4qqan1el.apps.googleusercontent.com",
+          "client_id": "12102687012-0or6ijhoe0bmr8lkqv9d48r93vcs4uvf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.govind.homedashboard",
+            "package_name": "com.govind.authentication",
             "certificate_hash": "a1ea2717357346b6f701622e18841c4cadf746a4"
           }
         },
         {
-          "client_id": "1094780605811-98j6majvamb01b140bpob1i6is2etfc8.apps.googleusercontent.com",
+          "client_id": "12102687012-f77frgqkmsabklp58rc6admngc9dsm9p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCNWJPWbxTXaDIqqtNk0K77Kn51qX81K2g"
+          "current_key": "AIzaSyBjS-2kN696tP3S3aQnSkhADz_jETMtfC0"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1094780605811-98j6majvamb01b140bpob1i6is2etfc8.apps.googleusercontent.com",
+              "client_id": "12102687012-f77frgqkmsabklp58rc6admngc9dsm9p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
