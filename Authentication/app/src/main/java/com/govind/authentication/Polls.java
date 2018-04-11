@@ -14,6 +14,8 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import static java.lang.Boolean.TRUE;
 
 public class Polls extends AppCompatActivity {
@@ -22,13 +24,18 @@ public class Polls extends AppCompatActivity {
     private WebView webview;
     private static final String TAG = "Main";
     private ProgressDialog progressBar;
-
+    private FirebaseAuth auth;
+    private String argumentPassingIn;
+    private String argumentPassingIn2;
     /** Called when the activity is first created. */@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        auth = FirebaseAuth.getInstance();
 
+        argumentPassingIn= auth.getCurrentUser().getDisplayName();
+        argumentPassingIn2=LoginActivity.currentuser;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+        Log.d(TAG,"HELLOOO"+argumentPassingIn2);
         setContentView(R.layout.activity_forum);
 
         this.webview = (WebView) findViewById(R.id.webview);
@@ -54,6 +61,8 @@ public class Polls extends AppCompatActivity {
                 if (progressBar.isShowing()) {
                     progressBar.dismiss();
                 }
+                webview.loadUrl("javascript:myJavaScriptFunc('" + argumentPassingIn + "')"); //if passing in an object. Mapping may need to take place
+
             }
 
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
@@ -68,6 +77,9 @@ public class Polls extends AppCompatActivity {
                 });
                 alertDialog.show();
             }
+
+
+
         });
         webview.loadUrl("https://authentication-140be.firebaseapp.com/poll.html");
     }
